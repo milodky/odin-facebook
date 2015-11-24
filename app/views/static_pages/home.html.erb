@@ -1,0 +1,8 @@
+<% if signed_in? %> 
+  <h1>hello <%= current_user.name %> | <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></h1>
+    <%= render 'posts/feed' %>
+    <%= render 'posts/form' %>
+
+<% else %>
+    <%= link_to 'Here you can sign UP', new_user_registration_path %> | <%= link_to 'Or Sign In', new_user_session_path %>
+<% end %>
